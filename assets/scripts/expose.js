@@ -35,19 +35,19 @@ function init() {
   const obj = document.getElementById("volume");
   obj.addEventListener("input", function() {
     const objValue = Number(obj.value);
-    if (objValue === 0) {
+    if (objValue == 0) {
       imageElement.src = 'assets/icons/volume-level-0.svg';
     }
 
-    else if (objvalue < 33) {
+    else if (objValue < 33) {
       imageElement.src = 'assets/icons/volume-level-1.svg';
     }
 
-    else if (objvalue < 67) {
+    else if (objValue < 67) {
       imageElement.src = 'assets/icons/volume-level-2.svg';
     }
 
-    else {
+    else if (objValue >= 67){
       imageElement.src = 'assets/icons/volume-level-3.svg';
     }
   });
