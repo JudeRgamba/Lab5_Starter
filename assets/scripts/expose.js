@@ -13,36 +13,29 @@ function init() {
     if (selectedValue == 'air-horn') {
       image.src = 'assets/images/air-horn.svg'; 
       image.alt = 'Air Horn Selected';
-      audio.src = 'assets/audio/air-horn.mp3'; 
-      const playButton = document.querySelector('button');
-      playButton.addEventListener("click", (event) => { 
-        const audio = new Audio('assets/audio/air-horn.mp3');
-        audio.play();
-      });
+      playAudio('air-horn', audio);
     }
 
     else if (selectedValue == 'car-horn') {
       image.src = 'assets/images/car-horn.svg'; 
       image.alt = 'Car Horn Selected';
-      audio.src = 'assets/audio/car-horn.mp3'; 
-      const playButton = document.querySelector('button');
-      playButton.addEventListener("click", (event) => { 
-        const audio = new Audio('assets/audio/car-horn.mp3');
-        audio.play();
-      });
+      playAudio('car-horn', audio);
     }
 
     else if (selectedValue == 'party-horn') {
       image.src = 'assets/images/party-horn.svg'; 
       image.alt = 'Party Horn Selected';
-      audio.src = 'assets/audio/party-horn.mp3'; 
-      const playButton = document.querySelector('button');
-      playButton.addEventListener("click", (event) => { 
-        const audio = new Audio('assets/audio/party-horn.mp3');
-        audio.play();
-      });
+      playAudio('party-horn', audio);
     }
   });
 
   
+}
+
+function playAudio(hornType, currentHorn) {
+  const playButton = document.querySelector('button');
+  playButton.addEventListener("click", (event) => { 
+    currentHorn.src = 'assets/audio/' + hornType + '.mp3';
+    currentHorn.play();
+  });
 }
