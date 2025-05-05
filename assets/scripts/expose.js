@@ -37,18 +37,22 @@ function init() {
     const objValue = Number(obj.value);
     if (objValue == 0) {
       imageElement.src = 'assets/icons/volume-level-0.svg';
+      audio.volume = 0;
     }
 
     else if (objValue < 33) {
       imageElement.src = 'assets/icons/volume-level-1.svg';
+      audio.volume = objValue / 100;
     }
 
     else if (objValue < 67) {
       imageElement.src = 'assets/icons/volume-level-2.svg';
+      audio.volume = objValue / 100;
     }
 
     else if (objValue >= 67){
       imageElement.src = 'assets/icons/volume-level-3.svg';
+      audio.volume = objValue / 100;
     }
   });
 }
