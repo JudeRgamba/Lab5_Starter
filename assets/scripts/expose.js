@@ -29,7 +29,28 @@ function init() {
     }
   });
 
-  
+  //Audio
+  let divElement = document.getElementById('volume-controls');
+  let imageElement = divElement.querySelector('img');
+  const obj = document.getElementById("volume");
+  obj.addEventListener("input", function() {
+    const objValue = Number(obj.value);
+    if (objValue === 0) {
+      imageElement.src = 'assets/icons/volume-level-0.svg';
+    }
+
+    else if (objvalue < 33) {
+      imageElement.src = 'assets/icons/volume-level-1.svg';
+    }
+
+    else if (objvalue < 67) {
+      imageElement.src = 'assets/icons/volume-level-2.svg';
+    }
+
+    else {
+      imageElement.src = 'assets/icons/volume-level-3.svg';
+    }
+  });
 }
 
 function playAudio(hornType, currentHorn) {
