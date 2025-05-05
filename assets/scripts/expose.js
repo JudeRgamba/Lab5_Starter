@@ -62,14 +62,15 @@ function init() {
   });
 }
 
+const jsConfetti = new JSConfetti()
+
 function playAudio(hornType, currentHorn) {
   const playButton = document.querySelector('button');
-  playButton.addEventListener("click", (event) => { 
+  playButton.onclick = () => { 
     if (hornType == 'party-horn') {
-      const jsConfetti = new JSConfetti()
       jsConfetti.addConfetti()
     }
     currentHorn.src = 'assets/audio/' + hornType + '.mp3';
     currentHorn.play();
-  });
+  };
 }
